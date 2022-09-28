@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "dip721_backend": {
+      "main": "src/dip721_backend/main.mo",
+      "type": "motoko"
+    },
+    "dip721_frontend": {
+      "dependencies": [
+        "dip721_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/dip721_frontend/src/index.html"
+      },
+      "source": [
+        "src/dip721_frontend/assets",
+        "dist/dip721_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
